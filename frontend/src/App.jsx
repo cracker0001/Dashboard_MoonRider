@@ -45,7 +45,7 @@ function App() {
       } else {
         setShowGraph(true);
       }
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [showGraph, currentIndex]);
