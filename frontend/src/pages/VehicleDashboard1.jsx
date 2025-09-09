@@ -14,8 +14,8 @@ const VehicleDashboard1 = () => {
     "Charge Cycle count", "Discharge Cycle count","Motor Fault"
   ];
 
-  const leftSideDetails = vehicleDetails.slice(0, 20);
-  const rightSideDetails = vehicleDetails.slice(20);
+ const leftSideDetails = vehicleDetails.slice(0, 23);
+  const rightSideDetails = vehicleDetails.slice(23);
 
   const [data, setData] = useState({});
 

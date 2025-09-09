@@ -11,7 +11,7 @@ const VehicleDashboard1 = () => {
     "Regen Flag", "Alarm", "Protection", "Remaining hours",
     "Remaining battery Energy", "Maximum Temperature", "Cell Voltage (Min)",
     "Cell Voltage (Max)", "Rated Capacity", "CAN bus status", "Motion",
-    "Charge Cycle count", "Discharge Cycle count"
+    "Charge Cycle count", "Discharge Cycle count","Motor Fault"
   ];
 
   const leftSideDetails = vehicleDetails.slice(0, 23);
