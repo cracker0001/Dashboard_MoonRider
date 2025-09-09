@@ -12,12 +12,12 @@
 /* LEFT SIDE */
 .vehicle-dashboard-left {
   flex: 1;
-  padding: 25px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 12px; /* Space between cards */
-  max-height: 100%; /* Fit within viewport */
+  gap: 10px; /* Reduced gap to fit cards */
+  max-height: 100%;
 }
 
 /* RIGHT SIDE */
@@ -32,8 +32,8 @@
 
 /* MAP SECTION */
 .vehicle-map-section {
-  flex: 0 0 45%; /* Reduced height to fit screen better */
-  min-height: 350px; /* Minimum height for visual appeal */
+  flex: 0 0 50%; /* Keep map visible */
+  min-height: 450px; /* Adjust for visual appeal */
   padding: 10px 0;
 }
 
@@ -60,31 +60,31 @@
   color: #fb9906;
   font-size: 26px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /* GRID LAYOUT */
 .vehicle-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Reduced min-width */
+  gap: 10px;
   align-content: start;
 }
 
 /* CARD STYLE */
 .vehicle-card {
-  padding: 8px;
-  font-size: 13px;
+  padding: 6px; /* Smaller padding */
+  font-size: 12px; /* Smaller font */
   font-weight: 600;
-  border-radius: 14px;
+  border-radius: 12px;
   text-align: center;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 165, 0, 0.35);
-  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: 0 3px 12px rgba(255, 152, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -95,12 +95,12 @@
 .vehicle-card:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 152, 0, 0.9);
-  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
+  box-shadow: 0 5px 16px rgba(255, 152, 0, 0.35);
 }
 
 .vehicle-value {
-  margin-top: 5px;
-  font-size: 14px;
+  margin-top: 4px;
+  font-size: 13px;
   font-weight: bold;
   color: #ff9800;
 }
@@ -108,10 +108,10 @@
 /* BELOW MAP CARDS */
 .vehicle-bottom {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
   align-content: start;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 /* REMOVE SCROLLBARS */
@@ -161,32 +161,32 @@
 @media screen and (min-width: 2000px) {
   .vehicle-title {
     font-size: 36px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .vehicle-dashboard-left {
-    gap: 16px;
-    padding: 30px;
+    gap: 12px; /* Reduced to fit more cards */
+    padding: 25px;
   }
 
   .vehicle-map-section {
-    flex: 0 0 50%; /* Slightly reduced to prevent scrollbar */
-    min-height: 500px; /* Enough height for TV */
+    flex: 0 0 55%; /* Slightly taller map */
+    min-height: 480px;
   }
 
   .vehicle-card {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 16px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 14px;
   }
 
   .vehicle-value {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .vehicle-grid,
   .vehicle-bottom {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
   }
 }
