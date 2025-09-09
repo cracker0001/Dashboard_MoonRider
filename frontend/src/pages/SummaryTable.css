@@ -1,0 +1,71 @@
+.summary-container {
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.summary-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #002b6b; /* Dark Blue */
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-table th,
+.summary-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.summary-table thead th {
+  background: #ff7f00; /* Orange header */
+  color: white;
+  font-weight: bold;
+}
+
+.summary-table tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.summary-table tbody tr:hover {
+  background: rgba(255, 165, 0, 0.15);
+}
+/* === 4K LARGE SCREEN STYLES FOR SUMMARY TABLE === */
+@media screen and (min-width: 3800px) {
+  .summary-container {
+    padding: 40px;
+    font-size: 20px;
+  }
+
+  .summary-title {
+    font-size: 38px;
+    padding: 20px 30px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .summary-table th,
+  .summary-table td {
+    padding: 18px;
+    font-size: 20px;
+  }
+
+  .summary-table {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .summary-table thead th {
+    font-size: 22px;
+  }
+}
