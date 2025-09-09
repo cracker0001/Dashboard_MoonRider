@@ -256,7 +256,7 @@ body {
 
 .map-container {
   width: 100%;
-  height: 400px;
+  height: 280px; /* ✅ kam height for laptop */
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -282,6 +282,7 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
+
 .dashboard-row {
   display: flex;
   height: 100%;
@@ -302,29 +303,33 @@ body {
   background: #ffffff;
   border-left: 1px solid #ddd;
 }
+
 .orange {
   color: white;
 }
+
 .device-list {
   padding: 0 15px;
-  overflow-y: auto;              
-  max-height: 300px;            
-  scrollbar-width: thin;        
+  overflow-y: auto;
+  max-height: 300px;
+  scrollbar-width: thin;
 }
 
 .device-list::-webkit-scrollbar {
-  width: 6px;                    /* Chrome */
+  width: 6px;
 }
 
 .device-list::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
-.vehicle-grid{
+
+.vehicle-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
 }
+
 /* === HIGH-RES 4K SCREENS (16:9 like 3840x2160) === */
 @media screen and (min-width: 3800px) {
   body {
@@ -340,7 +345,8 @@ body {
     font-size: 32px;
   }
 
-  .menu-icon, .header-right .icon {
+  .menu-icon,
+  .header-right .icon {
     font-size: 32px;
   }
 
@@ -395,7 +401,7 @@ body {
   }
 
   .map-container {
-    height: 800px;
+    height: 500px; /* ✅ kam height for big screen */
   }
 
   .map-note {

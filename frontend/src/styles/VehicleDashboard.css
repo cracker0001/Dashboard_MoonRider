@@ -5,8 +5,9 @@
   font-family: 'gilroy', sans-serif;
   background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
   color: #fff;
-  overflow: hidden; /* No scrolling */
+  overflow: hidden;
   padding: 10px;
+  box-sizing: border-box;
 }
 
 /* LEFT SIDE */
@@ -15,26 +16,24 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px; /* Reduced gap to fit cards */
+  gap: 12px;
   max-height: 100%;
 }
 
 /* RIGHT SIDE */
 .vehicle-dashboard-right {
-  flex: 1.5; /* Wider to accommodate map */
+  flex: 1.5;
   display: flex;
   flex-direction: column;
   border-left: 1px solid rgba(255, 255, 255, 0.15);
   padding: 20px;
-  gap: 15px;
+  gap: 12px;
 }
 
 /* MAP SECTION */
 .vehicle-map-section {
-  flex: 0 0 50%; /* Keep map visible */
-  min-height: 450px; /* Adjust for visual appeal */
-  padding: 10px 0;
+  flex: 1;
+  min-height: 35%; /* ✅ map thoda aur chhota */
 }
 
 .map-wrapper {
@@ -47,60 +46,53 @@
   box-shadow: 0 4px 16px rgba(255, 152, 0, 0.25);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  transition: box-shadow 0.3s ease, border 0.3s ease;
-}
-
-.map-wrapper:hover {
-  border: 1px solid rgba(255, 165, 0, 0.8);
-  box-shadow: 0 6px 24px rgba(255, 152, 0, 0.45);
 }
 
 /* TITLE */
 .vehicle-title {
   color: #fb9906;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* GRID LAYOUT */
 .vehicle-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Reduced min-width */
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 9px;
   align-content: start;
 }
 
 /* CARD STYLE */
 .vehicle-card {
-  padding: 6px; /* Smaller padding */
-  font-size: 12px; /* Smaller font */
+  height: 65px; /* ✅ thoda aur chhota */
+  padding: 6px;
+  font-size: 11px;
   font-weight: 600;
   border-radius: 12px;
   text-align: center;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 165, 0, 0.35);
-  box-shadow: 0 3px 12px rgba(255, 152, 0, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
-  cursor: pointer;
+  box-shadow: 0 3px 9px rgba(255, 152, 0, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .vehicle-card:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 152, 0, 0.9);
-  box-shadow: 0 5px 16px rgba(255, 152, 0, 0.35);
+  box-shadow: 0 5px 12px rgba(255, 152, 0, 0.3);
 }
 
 .vehicle-value {
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: bold;
   color: #ff9800;
 }
@@ -108,18 +100,14 @@
 /* BELOW MAP CARDS */
 .vehicle-bottom {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 9px;
   align-content: start;
   margin-top: 10px;
 }
 
-/* REMOVE SCROLLBARS */
-::-webkit-scrollbar {
-  display: none;
-}
-* {
-  scrollbar-width: none;
+.vehicle-bottom .vehicle-card {
+  height: 65px; /* ✅ same as top cards */
 }
 
 /* MOBILE */
@@ -138,55 +126,41 @@
   }
 
   .vehicle-map-section {
-    height: 200px;
+    height: 170px; /* ✅ slightly smaller */
   }
 
   .vehicle-grid,
   .vehicle-bottom {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   }
 
   .vehicle-card {
-    padding: 5px;
-    font-size: 11px;
+    height: 55px;
+    font-size: 10.5px;
   }
 
   .vehicle-value {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
 /* LARGE SCREENS / TV / 4K */
 @media screen and (min-width: 2000px) {
   .vehicle-title {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-
-  .vehicle-dashboard-left {
-    gap: 12px; /* Reduced to fit more cards */
-    padding: 25px;
+    font-size: 28px;
   }
 
   .vehicle-map-section {
-    flex: 0 0 55%; /* Slightly taller map */
-    min-height: 480px;
+    min-height: 40%; /* ✅ thoda aur kam */
   }
 
-  .vehicle-card {
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 14px;
+  .vehicle-card,
+  .vehicle-bottom .vehicle-card {
+    height: 95px; /* ✅ reduced further */
+    font-size: 13.5px;
   }
 
   .vehicle-value {
-    font-size: 16px;
-  }
-
-  .vehicle-grid,
-  .vehicle-bottom {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
+    font-size: 15px;
   }
 }
