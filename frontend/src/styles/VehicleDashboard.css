@@ -5,23 +5,24 @@
   font-family: 'gilroy', sans-serif;
   background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
   color: #fff;
-  overflow: hidden; /* Remove scrolling */
-  padding: 10px; /* Add some space around layout */
+  overflow: hidden; /* No scrolling */
+  padding: 10px;
 }
 
 /* LEFT SIDE */
 .vehicle-dashboard-left {
   flex: 1;
-  padding: 25px; /* Increased padding for better spacing */
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 15px; /* Space between cards */
+  gap: 12px; /* Space between cards */
+  max-height: 100%; /* Fit within viewport */
 }
 
 /* RIGHT SIDE */
 .vehicle-dashboard-right {
-  flex: 1.2; /* Slightly wider to accommodate map */
+  flex: 1.5; /* Wider to accommodate map */
   display: flex;
   flex-direction: column;
   border-left: 1px solid rgba(255, 255, 255, 0.15);
@@ -31,7 +32,8 @@
 
 /* MAP SECTION */
 .vehicle-map-section {
-  flex: 0 0 50%; /* Bigger map for PC / visual appeal */
+  flex: 0 0 45%; /* Reduced height to fit screen better */
+  min-height: 350px; /* Minimum height for visual appeal */
   padding: 10px 0;
 }
 
@@ -63,10 +65,9 @@
 
 /* GRID LAYOUT */
 .vehicle-grid {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
+  gap: 12px;
   align-content: start;
 }
 
@@ -92,9 +93,9 @@
 }
 
 .vehicle-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: rgba(255, 152, 0, 0.9);
-  box-shadow: 0 8px 24px rgba(255, 152, 0, 0.45);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
 }
 
 .vehicle-value {
@@ -106,10 +107,9 @@
 
 /* BELOW MAP CARDS */
 .vehicle-bottom {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
+  gap: 12px;
   align-content: start;
   margin-top: 15px;
 }
@@ -164,9 +164,14 @@
     margin-bottom: 25px;
   }
 
+  .vehicle-dashboard-left {
+    gap: 16px;
+    padding: 30px;
+  }
+
   .vehicle-map-section {
-    flex: 0 0 60%; /* Map enlarged for TV / PC */
-    padding: 20px 0;
+    flex: 0 0 50%; /* Slightly reduced to prevent scrollbar */
+    min-height: 500px; /* Enough height for TV */
   }
 
   .vehicle-card {
