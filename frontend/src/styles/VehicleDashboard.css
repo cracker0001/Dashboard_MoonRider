@@ -3,9 +3,9 @@
   display: flex;
   height: 100vh;
   font-family: 'gilroy', sans-serif;
-  background: linear-gradient(135deg, #1f1f1f, #2a2a2a); /* Dark neutral base */
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
   color: #fff;
-  overflow: hidden;
+  overflow: hidden; /* Remove scrolling */
 }
 
 /* LEFT SIDE */
@@ -23,28 +23,25 @@
   display: flex;
   flex-direction: column;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
 }
 
 /* MAP SECTION */
 .vehicle-map-section {
-  height: 460px;
-  padding: 15px;
-  flex-shrink: 0;
+  flex: 0 0 35%; /* Reduced map height */
+  padding: 10px 0;
 }
 
 .map-wrapper {
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
-
-  /* Glass + Orange glow (default subtle) */
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 165, 0, 0.35);
   box-shadow: 0 4px 16px rgba(255, 152, 0, 0.25);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-
   transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
@@ -55,74 +52,74 @@
 
 /* TITLE */
 .vehicle-title {
-  color: #fb9906; /* Primary orange */
-  font-size: 26px;
+  color: #fb9906;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-/* GRID (Uniform layout) */
+/* GRID LAYOUT */
 .vehicle-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
   align-content: start;
 }
 
-/* GLASS CARD STYLE */
+/* CARD STYLE */
 .vehicle-card {
-  height: 90px;
-  padding: 8px;
-  font-size: 13px;
+  padding: 6px;
+  font-size: 12px;
   font-weight: 600;
-  border-radius: 14px;
+  border-radius: 12px;
   text-align: center;
   color: #ffffff;
-
-  /* Default subtle glow */
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 165, 0, 0.35);
-  box-shadow: 0 3px 14px rgba(255, 152, 0, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: 0 3px 12px rgba(255, 152, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .vehicle-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: rgba(255, 152, 0, 0.9);
-  box-shadow: 0 8px 26px rgba(255, 152, 0, 0.55);
+  box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4);
 }
 
 .vehicle-value {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
-  color: #ff9800; /* Orange value text */
+  color: #ff9800;
 }
 
-/* CARDS BELOW MAP */
+/* BELOW MAP CARDS */
 .vehicle-bottom {
   flex: 1;
-  padding: 8px 12px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
   align-content: start;
+  margin-top: 10px;
 }
 
-/* SCROLLBAR HIDE */
+/* REMOVE SCROLLBARS */
 ::-webkit-scrollbar {
   display: none;
 }
 * {
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
   .vehicle-dashboard-container {
     flex-direction: column;
@@ -136,68 +133,50 @@
   }
 
   .vehicle-map-section {
-    height: 280px;
-  }
-
-  .vehicle-card {
-    height: 80px;
-    padding: 6px;
+    height: 200px;
   }
 
   .vehicle-grid,
   .vehicle-bottom {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
-}
-/* === LARGE 16:9 SCREEN OPTIMIZATION (4K RESOLUTION) === */
-@media screen and (min-width: 3800px) {
-  body {
-    font-size: 22px;
-  }
-
-  .vehicle-title {
-    font-size: 40px;
-    margin-bottom: 25px;
-  }
-
-  .vehicle-dashboard-left {
-    padding: 40px;
-  }
-
-  .vehicle-map-section {
-    height: 700px;
-    padding: 30px;
-  }
-
-  .map-wrapper {
-    border-radius: 20px;
-    box-shadow: 0 6px 24px rgba(255, 152, 0, 0.35);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
   }
 
   .vehicle-card {
-    height: 130px;
-    font-size: 18px;
-    padding: 16px;
-    border-radius: 18px;
-  }
-
-  .vehicle-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 32px rgba(255, 152, 0, 0.6);
+    padding: 5px;
+    font-size: 11px;
   }
 
   .vehicle-value {
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 12px;
+  }
+}
+
+/* LARGE SCREENS / TV / 4K */
+@media screen and (min-width: 2000px) {
+  .vehicle-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .vehicle-map-section {
+    flex: 0 0 40%;
+    padding: 20px 0;
+  }
+
+  .vehicle-card {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  .vehicle-value {
+    font-size: 16px;
   }
 
   .vehicle-grid,
   .vehicle-bottom {
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  .vehicle-dashboard-right {
-    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
   }
 }
