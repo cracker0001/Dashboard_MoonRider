@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MapView from "../components/Mapview";
+import MapView from "../components/MapView";
 import "../styles/VehicleDashboard.css";
 
 const VehicleDashboard1 = () => {
